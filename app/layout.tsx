@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar/NavBar";
 import Container from "@/components/global/Container";
-import { Provider } from "@radix-ui/react-toast";
+import Providers from "./providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,10 +20,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <Provider>
+        <Providers>
           <Navbar />
           <Container className="py-20">{children}</Container>
-        </Provider>
+        </Providers>
       </body>
     </html>
   );
